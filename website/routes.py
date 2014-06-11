@@ -81,6 +81,18 @@ def map():
 def projects():
     return render_template('projects.html', entries=theDatabase.getAllEntriesWithSubmissionNums(), pageName="Projects", emailForm=emailForm())
 
+@app.route('/judging')
+def judging():
+    return render_template('judging.html', entries=theDatabase.getAllEntriesWithSubmissionNums(), pageName="Judging", emailForm=emailForm())
+
+@app.route('/judging/checkinlogin')
+def checkinlogin():
+    return render_template('checkinlogin.html', entries=theDatabase.getAllEntriesWithSubmissionNums(), pageName="Check-in Log-in", emailForm=emailForm())
+
+@app.route('/judging/checkin')
+def checkin():
+    return render_template('checkin.html', entries=theDatabase.getAllEntriesWithSubmissionNums(), pageName="Check-in", emailForm=emailForm())
+
 
 @app.route('/seeliogallery')
 def seeliogallery():
